@@ -1,0 +1,13 @@
+[package]
+name = "api_server"
+version = "0.1.0"
+authors = ["Yale Cason <jacintocapote@gmail.com>"]
+
+[dependencies]
+rocket = "0.4.10"
+diesel = { version = "1.4.7", features = ["postgres"] }
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["json", "diesel_postgres_pool"]
