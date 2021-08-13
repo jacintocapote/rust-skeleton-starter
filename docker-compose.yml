@@ -2,15 +2,15 @@
 version: "3"
 
 services:
-  web:
-    build: ./web
-    volumes:
-      - ./web:/usr/src/app
-    ports:
-      - "3000:3000"
-    command: bash -c "npm run dev"
-    links:
-      - api_server
+#  web:
+#    build: ./web
+#    volumes:
+#      - ./web:/usr/src/app
+#    ports:
+#      - "3000:3000"
+#    command: bash -c "npm run dev"
+#    links:
+#      - api_server
 
   api_server:
     build: ./api_server

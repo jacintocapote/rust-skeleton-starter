@@ -5,7 +5,11 @@ authors = ["Yale Cason <jacintocapote@gmail.com>"]
 
 [dependencies]
 rocket = "0.4.10"
+rocket_cors = "0.5.1"
 diesel = { version = "1.4.7", features = ["postgres"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dotenv = "0.10"
 
 [dependencies.rocket_contrib]
 version = "*"

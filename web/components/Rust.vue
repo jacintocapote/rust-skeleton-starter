@@ -3,10 +3,14 @@
     <p v-if="$fetchState.pending">
       <span class="loading"></span>
     </p>
-    <p v-else-if="$fetchState.error">Error while fetching mountains 🤬</p>
+    <p v-else-if="$fetchState.error">Error while fetching Rust Endpoint 🤬</p>
     <ul v-else>
-      <li v-for="mountain in mountains">
-          {{ mountain.value }}
+      <li v-for="product in products">
+        {{ product.id }}
+        {{ product.price }}
+        {{ product.title }}
+        <span v-html="product.body"></span>
+        {{ product.published }}
       </li>
     </ul>
     <ui-button @click="$fetch">Refresh Data</ui-button>
@@ -16,7 +20,7 @@
   export default {
     data() {
       return {
-        mountains: []
+        products: []
       }
     },
     activated() {
@@ -26,7 +30,7 @@
     },
 
     async fetch() {
-      this.mountains = await this.$http.$get('http://localhost:8080')
+      this.products = await this.$http.$get('http://localhost:3001/api')
     }
   }
 </script>
